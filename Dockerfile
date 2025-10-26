@@ -1,12 +1,13 @@
-FROM ubuntu:latest
+FROM alpine:latest
 
-RUN apt-get update -yq
-#RUN apt-get install -yq gcc g++ make git curl wget
-#RUN apt-get install -yq nano tmux
-#RUN apt-get install -yq python3 python3-pip python3
-#RUN apt-get install -yq sudo
+RUN apk add --update ffmpeg imagemagick
+#RUN adduser --disabled-password user
 
-RUN apt-get install -yq ffmpeg imagemagick
+#USER user
+WORKDIR /home/user/mount/
+COPY alpinply.sh /bin/
 
-USER ubuntu
-WORKDIR /home/ubuntu/
+# TEST PURPOSES
+#COPY sctest.sh /bin/
+#CMD sctest.sh -p "$PIC" -c "$CUBE" -o "$OUT"
+CMD alpinply.sh -p "$PIC" -c "$CUBE" -o "$OUT"
