@@ -1,3 +1,10 @@
+# Refacto todo : Use only ffmpeg to apply lut in .cube format.
+# Create a sharable folder with verious .cube files and examples of what it looks like.
+
+
+
+
+## Deprecated content : _(lefacy)_
 Run the container
 
 > This is deprecated but stil works just deprecated
